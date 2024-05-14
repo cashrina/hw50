@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<style>
+    body {
+        background-image: url("https://baldezh.top/uploads/posts/2021-04/1618546184_41-funart_pro-p-oboi-fon-fon-odnotonnii-temnii-43.jpg");
+    }
+</style>
+<body>
+<div id="app" class="container d-flex flex-wrap flex-row mt-3"></div>
+
+<script type="text/babel">
+    const Film = ({name, day, month, year, photo}) => {
+        return (
+            <div className="col-md-3 mb-3">
+                <div className="shadow-lg p-3 mb-5 bg-body rounded cardjustify-content-between d-flex flex-column" style={{ width: '18rem', height: '30rem'}}>
+                    <img className="card-img-top" src={photo} alt={'Photo of ' + name}/>
+                    <div className="card-body d-flex flex-column justify-content-between mt-auto align-items-start">
+                        <h5 className="card-title">{name}</h5>
+                        <p className="card-text">Год выпуска: {day} {month} {year} года</p>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const posters = (
+        <div className="row">
+            <Film name="Астрал" day="31" month="марта" year="2011" photo="https://static.hdrezka.ac/i/2013/12/17/k0f90fc754e0emm27e57h.jpg" />
+            <Film name="Молчание ягнят" day="30" month="января" year="1991" photo="https://static.hdrezka.ac/i/2021/1/19/fd539f56d14c7ls62h55d.jpeg" />
+            <Film name="Достать ножи" day="7" month="сентября" year="2019" photo="https://static.hdrezka.ac/i/2022/8/2/n9aea618cf25emx56s21b.jpg" />
+            <Film name="Остров проклятых" day="13" month="февраля" year="2010" photo="https://static.hdrezka.ac/i/2021/3/8/ga421fd7837ffyx31y64f.jpeg" />
+        </div>
+    );
+    ReactDOM.render(posters, document.getElementById('app'));
+</script>
+</body>
+</html>
